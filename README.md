@@ -1,0 +1,2 @@
+# liferay-training-workspace
+
