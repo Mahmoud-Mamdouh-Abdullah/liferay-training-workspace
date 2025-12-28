@@ -2,6 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="liferay-training-workspace.modules.login-fragment" target="17" />
+      <module name="liferay-training-workspace.modules.login-fragment.main" target="17" />
+      <module name="liferay-training-workspace.modules.login-fragment.test" target="17" />
+      <module name="liferay-training-workspace.modules.login-fragment.testIntegration" target="17" />
       <module name="Training.liferay-training-workspace" target="17" />
       <module name="Training.liferay-training-workspace.main" target="17" />
       <module name="Training.liferay-training-workspace.test" target="17" />

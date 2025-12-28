@@ -6,6 +6,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Training.liferay-training-workspace.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Training.liferay-training-workspace.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Training.liferay-training-workspace.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Training.liferay-training-workspace.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/liferay-training-workspace.iml" filepath="$PROJECT_DIR$/liferay-training-workspace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/liferay-training-workspace.modules.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/liferay-training-workspace.modules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/login-fragment/liferay-training-workspace.modules.login-fragment.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/login-fragment/liferay-training-workspace.modules.login-fragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/login-fragment/liferay-training-workspace.modules.login-fragment.main.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/login-fragment/liferay-training-workspace.modules.login-fragment.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/login-fragment/liferay-training-workspace.modules.login-fragment.test.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/login-fragment/liferay-training-workspace.modules.login-fragment.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/login-fragment/liferay-training-workspace.modules.login-fragment.testIntegration.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/login-fragment/liferay-training-workspace.modules.login-fragment.testIntegration.iml" />
     </modules>
   </component>
 </project>
