@@ -2,6 +2,22 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-api" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-api.main" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-api.test" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-api.testIntegration" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-client" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-client.main" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-client.test" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-client.testIntegration" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-impl" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-impl.main" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-impl.test" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-impl.testIntegration" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-test" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-test.main" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-test.test" target="17" />
+      <module name="liferay-training-workspace.modules.liferay-rest.liferay-rest-test.testIntegration" target="17" />
       <module name="liferay-training-workspace.modules.login-fragment" target="17" />
       <module name="liferay-training-workspace.modules.login-fragment.main" target="17" />
       <module name="liferay-training-workspace.modules.login-fragment.test" target="17" />

@@ -1,0 +1,3 @@
+Bundle-Name: liferay-rest-impl
+Bundle-SymbolicName: com.code81.tmo.liferay.rest.impl
+Bundle-Version: 1.0.0

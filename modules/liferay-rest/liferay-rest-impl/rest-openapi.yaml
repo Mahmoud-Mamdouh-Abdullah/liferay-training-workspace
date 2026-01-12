@@ -1,0 +1,258 @@
+openapi: 3.0.1
+
+info:
+    title: LiferayRest
+    description: LiferayRest REST API
+    version: v1.0
+    license:
+        name: Apache 2.0
+        url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+paths:
+    /events:
+        get:
+            tags:
+                - Events
+            description: Retrieves events
+            operationId: getEvents
+            parameters:
+                - name: keyword
+                  in: query
+                  required: false
+                  description: Keyword to search for
+                  schema:
+                      type: string
+                - name: date
+                  in: query
+                  required: false
+                  description: Date to search for
+                  schema:
+                      type: string
+                - name: page
+                  in: query
+                  required: false
+                  description: Page number
+                  schema:
+                      type: string
+                - name: size
+                  in: query
+                  required: false
+                  description: Page size
+                  schema:
+                      type: string
+            responses:
+                "200":
+                    description: Successful operation
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/EventsResponse"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/EventsResponse"
+    /news:
+        get:
+            tags:
+                - News
+            description: Retrieve News
+            operationId: getNews
+            parameters:
+                - name: keyword
+                  in: query
+                  required: false
+                  description: Keyword for Search
+                  schema:
+                      type: string
+                - name: date
+                  in: query
+                  required: false
+                  description: Date to search for
+                  schema:
+                      type: string
+                - name: page
+                  in: query
+                  required: false
+                  description: Page number
+                  schema:
+                      type: string
+                - name: size
+                  in: query
+                  required: false
+                  description: Page size
+                  schema:
+                      type: string
+            responses:
+                "200":
+                    description: Successful operation
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/NewsResponse"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/NewsResponse"
+    /services:
+        get:
+            tags:
+                - Services
+            description: Retrieve Services
+            operationId: getServices
+            parameters:
+                - name: keyword
+                  in: query
+                  required: false
+                  description: Keyword for Search
+                  schema:
+                      type: string
+                - name: date
+                  in: query
+                  required: false
+                  description: Date to search for
+                  schema:
+                      type: string
+                - name: page
+                  in: query
+                  required: false
+                  description: Page number
+                  schema:
+                      type: string
+                - name: size
+                  in: query
+                  required: false
+                  description: Page size
+                  schema:
+                      type: string
+            responses:
+                "200":
+                    description: Successful operation
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/ServicesResponse"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/ServicesResponse"
+components:
+    schemas:
+        Event:
+            type: object
+            properties:
+                title:
+                    type: string
+                description:
+                    type: string
+                imageUrl:
+                    type: string
+                date:
+                    type: string
+                timeFrom:
+                    type: string
+                    example: "08:00 AM"
+                timeTo:
+                    type: string
+                    example: "12:00 PM"
+                location:
+                    type: string
+                link:
+                    type: string
+                    format: uri
+
+        EventsResponse:
+            type: object
+            properties:
+                events:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/Event"
+                page:
+                    type: integer
+                    format: int32
+                size:
+                    type: integer
+                    format: int32
+                totalCount:
+                    type: integer
+                    format: int64
+                totalPages:
+                    type: integer
+                    format: int32
+        News:
+            type: object
+            properties:
+                title:
+                    type: string
+                description:
+                    type: string
+                imageUrl:
+                    type: string
+                date:
+                    type: string
+        NewsResponse:
+            type: object
+            properties:
+                newses:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/News'
+                page:
+                    type: integer
+                    format: int32
+                size:
+                    type: integer
+                    format: int32
+                totalCount:
+                    type: integer
+                    format: int64
+                totalPages:
+                    type: integer
+                    format: int32
+        Service:
+            type: object
+            properties:
+                title:
+                    type: string
+                description:
+                    type: string
+                imageUrl:
+                    type: string
+                date:
+                    type: string
+                source:
+                    type: string
+                brief:
+                    type: string
+                code:
+                    type: string
+                procedure:
+                    type: string
+                externalUrl:
+                    type: string
+                documents:
+                    type: array
+                    items:
+                        type: string
+                termsAndConditions:
+                    type: string
+                outcome:
+                    type: string
+                expecterResponseTime:
+                    type: integer
+        ServicesResponse:
+            type: object
+            properties:
+                services:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Service'
+                page:
+                    type: integer
+                    format: int32
+                size:
+                    type: integer
+                    format: int32
+                totalCount:
+                    type: integer
+                    format: int64
+                totalPages:
+                    type: integer
+                    format: int32

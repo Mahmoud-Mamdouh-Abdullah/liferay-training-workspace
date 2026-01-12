@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -9,7 +10,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/modules" />
+            <option value="$PROJECT_DIR$/modules/liferay-rest" />
+            <option value="$PROJECT_DIR$/modules/liferay-rest/liferay-rest-api" />
+            <option value="$PROJECT_DIR$/modules/liferay-rest/liferay-rest-impl" />
             <option value="$PROJECT_DIR$/modules/login-fragment" />
+            <option value="$PROJECT_DIR$/themes" />
+            <option value="$PROJECT_DIR$/themes/tmo-theme" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="true" />

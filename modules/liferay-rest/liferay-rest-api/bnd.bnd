@@ -1,0 +1,6 @@
+Bundle-Name: liferay-rest-api
+Bundle-SymbolicName: com.code81.tmo.liferay.rest.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.code81.tmo.liferay.rest.dto.v1_0,\
+	com.code81.tmo.liferay.rest.resource.v1_0

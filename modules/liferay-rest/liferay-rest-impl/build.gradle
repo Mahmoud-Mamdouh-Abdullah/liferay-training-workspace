@@ -1,0 +1,7 @@
+dependencies {
+	api project(":modules:liferay-rest:liferay-rest-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+group = "com.code81.tmo.liferay.rest"
