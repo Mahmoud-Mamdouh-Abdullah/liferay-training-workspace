@@ -1,6 +1,7 @@
 package com.code81.tmo.liferay.rest.internal.resource.v1_0;
 
 import com.code81.tmo.liferay.rest.dto.v1_0.ServicesResponse;
+import com.code81.tmo.liferay.rest.dto.v1_0.SourcesResponse;
 import com.code81.tmo.liferay.rest.resource.v1_0.ServicesResource;
 
 import com.liferay.petra.function.UnsafeFunction;
@@ -97,6 +98,25 @@ public abstract class BaseServicesResourceImpl implements ServicesResource {
 		throws Exception {
 
 		return new ServicesResponse();
+	}
+
+	/**
+	 * Invoke this method with the command line:
+	 *
+	 * curl -X 'GET' 'http://localhost:8080/o/liferay-rest/v1.0/services/sources'  -u 'test@liferay.com:test'
+	 */
+	@io.swagger.v3.oas.annotations.Operation(
+		description = "Retrieve Services Sources"
+	)
+	@io.swagger.v3.oas.annotations.tags.Tags(
+		value = {@io.swagger.v3.oas.annotations.tags.Tag(name = "Services")}
+	)
+	@javax.ws.rs.GET
+	@javax.ws.rs.Path("/services/sources")
+	@javax.ws.rs.Produces({"application/json", "application/xml"})
+	@Override
+	public SourcesResponse getSources() throws Exception {
+		return new SourcesResponse();
 	}
 
 	public void setContextAcceptLanguage(AcceptLanguage contextAcceptLanguage) {

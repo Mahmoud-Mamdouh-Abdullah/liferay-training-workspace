@@ -1,6 +1,7 @@
 package com.code81.tmo.liferay.rest.resource.v1_0;
 
 import com.code81.tmo.liferay.rest.dto.v1_0.ServicesResponse;
+import com.code81.tmo.liferay.rest.dto.v1_0.SourcesResponse;
 
 import com.liferay.portal.kernel.service.GroupLocalService;
 import com.liferay.portal.kernel.service.ResourceActionLocalService;
@@ -41,6 +42,8 @@ public interface ServicesResource {
 			String keyword, String source, String date, String page,
 			String size)
 		throws Exception;
+
+	public SourcesResponse getSources() throws Exception;
 
 	public default void setContextAcceptLanguage(
 		AcceptLanguage contextAcceptLanguage) {

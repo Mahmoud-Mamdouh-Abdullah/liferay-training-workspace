@@ -1,6 +1,7 @@
 package com.code81.tmo.liferay.rest.resource.v1_0.test;
 
 import com.code81.tmo.liferay.rest.client.dto.v1_0.ServicesResponse;
+import com.code81.tmo.liferay.rest.client.dto.v1_0.SourcesResponse;
 import com.code81.tmo.liferay.rest.client.http.HttpInvoker;
 import com.code81.tmo.liferay.rest.client.pagination.Page;
 import com.code81.tmo.liferay.rest.client.resource.v1_0.ServicesResource;
@@ -125,6 +126,28 @@ public abstract class BaseServicesResourceTestCase {
 			"This method needs to be implemented");
 	}
 
+	@Test
+	public void testGetSources() throws Exception {
+		Services postServices = testGetServices_addServices();
+
+		SourcesResponse postSourcesResponse = testGetSources_addSourcesResponse(
+			postServices.getServicesId(), randomSourcesResponse());
+
+		SourcesResponse getSourcesResponse = servicesResource.getSources(
+			postServices.getServicesId());
+
+		assertEquals(postSourcesResponse, getSourcesResponse);
+		assertValid(getSourcesResponse);
+	}
+
+	protected SourcesResponse testGetSources_addSourcesResponse(
+			long servicesId, SourcesResponse sourcesResponse)
+		throws Exception {
+
+		throw new UnsupportedOperationException(
+			"This method needs to be implemented");
+	}
+
 	protected void assertContains(Object services, List<Object> serviceses) {
 		boolean contains = false;
 
@@ -174,6 +197,14 @@ public abstract class BaseServicesResourceTestCase {
 		Assert.assertTrue(
 			servicesResponse1 + " does not equal " + servicesResponse2,
 			equals(servicesResponse1, servicesResponse2));
+	}
+
+	protected void assertEquals(
+		SourcesResponse sourcesResponse1, SourcesResponse sourcesResponse2) {
+
+		Assert.assertTrue(
+			sourcesResponse1 + " does not equal " + sourcesResponse2,
+			equals(sourcesResponse1, sourcesResponse2));
 	}
 
 	protected void assertEqualsIgnoringOrder(
@@ -307,11 +338,37 @@ public abstract class BaseServicesResourceTestCase {
 		Assert.assertTrue(valid);
 	}
 
+	protected void assertValid(SourcesResponse sourcesResponse) {
+		boolean valid = true;
+
+		for (String additionalAssertFieldName :
+				getAdditionalSourcesResponseAssertFieldNames()) {
+
+			if (Objects.equals("sources", additionalAssertFieldName)) {
+				if (sourcesResponse.getSources() == null) {
+					valid = false;
+				}
+
+				continue;
+			}
+
+			throw new IllegalArgumentException(
+				"Invalid additional assert field name " +
+					additionalAssertFieldName);
+		}
+
+		Assert.assertTrue(valid);
+	}
+
 	protected String[] getAdditionalAssertFieldNames() {
 		return new String[0];
 	}
 
 	protected String[] getAdditionalServicesResponseAssertFieldNames() {
+		return new String[0];
+	}
+
+	protected String[] getAdditionalSourcesResponseAssertFieldNames() {
 		return new String[0];
 	}
 
@@ -471,6 +528,35 @@ public abstract class BaseServicesResourceTestCase {
 		return true;
 	}
 
+	protected boolean equals(
+		SourcesResponse sourcesResponse1, SourcesResponse sourcesResponse2) {
+
+		if (sourcesResponse1 == sourcesResponse2) {
+			return true;
+		}
+
+		for (String additionalAssertFieldName :
+				getAdditionalSourcesResponseAssertFieldNames()) {
+
+			if (Objects.equals("sources", additionalAssertFieldName)) {
+				if (!Objects.deepEquals(
+						sourcesResponse1.getSources(),
+						sourcesResponse2.getSources())) {
+
+					return false;
+				}
+
+				continue;
+			}
+
+			throw new IllegalArgumentException(
+				"Invalid additional assert field name " +
+					additionalAssertFieldName);
+		}
+
+		return true;
+	}
+
 	protected java.lang.reflect.Field[] getDeclaredFields(Class clazz)
 		throws Exception {
 
@@ -593,6 +679,13 @@ public abstract class BaseServicesResourceTestCase {
 				size = RandomTestUtil.randomInteger();
 				totalCount = RandomTestUtil.randomLong();
 				totalPages = RandomTestUtil.randomInteger();
+			}
+		};
+	}
+
+	protected SourcesResponse randomSourcesResponse() throws Exception {
+		return new SourcesResponse() {
+			{
 			}
 		};
 	}

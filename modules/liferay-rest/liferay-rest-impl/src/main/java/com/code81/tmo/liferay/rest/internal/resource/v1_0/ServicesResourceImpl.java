@@ -3,6 +3,7 @@ package com.code81.tmo.liferay.rest.internal.resource.v1_0;
 
 import com.code81.tmo.liferay.rest.dto.v1_0.Service;
 import com.code81.tmo.liferay.rest.dto.v1_0.ServicesResponse;
+import com.code81.tmo.liferay.rest.dto.v1_0.SourcesResponse;
 import com.code81.tmo.liferay.rest.internal.utils.GeneralListing;
 import com.code81.tmo.liferay.rest.internal.utils.GeneralValidation;
 import com.code81.tmo.liferay.rest.resource.v1_0.ServicesResource;
@@ -242,6 +243,43 @@ public class ServicesResourceImpl extends BaseServicesResourceImpl {
 			logger.error("Error mapping article to service: " + e.getMessage(), e);
 			return null;
 		}
+	}
+
+	@Override
+	public SourcesResponse getSources() throws Exception {
+
+		DDMStructure ddmStructure =
+				DDMStructureLocalServiceUtil.getDDMStructure(SERVICES_STRUCTURE_ID);
+
+		DDMFormField sourceField = null;
+
+		for (DDMFormField field : ddmStructure.getDDMFormFields(true)) {
+			if ("ServiceSource".equals(field.getFieldReference())) {
+				sourceField = field;
+				break;
+			}
+		}
+
+		if (sourceField == null) {
+			throw new IllegalStateException(
+					"DDM field with fieldReference 'ServiceSource' not found"
+			);
+		}
+
+		Locale locale = LocaleUtil.getDefault();
+
+		List<String> sources = new ArrayList<>();
+
+		sourceField.getDDMFormFieldOptions()
+				.getOptions()
+				.forEach((optionId, labelMap) ->
+						sources.add(labelMap.getString(locale))
+				);
+
+		SourcesResponse response = new SourcesResponse();
+		response.setSources(sources.toArray(new String[0]));
+
+		return response;
 	}
 
 }

@@ -138,6 +138,23 @@ paths:
                         application/xml:
                             schema:
                                 $ref: "#/components/schemas/ServicesResponse"
+    /services/sources:
+      get:
+        tags:
+          - Services
+        description: Retrieve Services Sources
+        operationId: getSources
+        responses:
+          "200":
+            description: Successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/SourcesResponse"
+              application/xml:
+                schema:
+                  $ref: "#/components/schemas/SourcesResponse"
+
 components:
     schemas:
         Event:
@@ -262,3 +279,10 @@ components:
                 totalPages:
                     type: integer
                     format: int32
+        SourcesResponse:
+          type: object
+          properties:
+            sources:
+              type: array
+              items:
+                type: string
